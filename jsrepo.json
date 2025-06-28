@@ -1,0 +1,12 @@
+{
+  "$schema": "https://unpkg.com/jsrepo@2.4.2/schemas/project-config.json",
+  "repos": [],
+  "includeTests": false,
+  "includeDocs": false,
+  "watermark": true,
+  "formatter": "prettier",
+  "configFiles": {},
+  "paths": {
+    "*": "./src/components"
+  }
+}
