@@ -13,7 +13,7 @@ function App() {
   <Squares 
     speed={0.2} 
     squareSize={40}
-    direction="diagonal"
+    direction="down"
     borderColor="#fff"
     hoverFillColor="#222"
   />
