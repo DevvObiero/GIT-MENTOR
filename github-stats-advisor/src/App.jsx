@@ -29,9 +29,7 @@ function Home() {
   speed={4}
   className="text-4xl font-bold text-white mb-4"
 />
-          {/* <h2 className="text-4xl md:text-3xl font-semibold mb-4">
-          
-          </h2> */}
+          {/* <h2 className="text-4xl md:text-3xl font-semibold mb-4"></h2> */}
           <input 
             type="text" 
             placeholder="Enter your GitHub username" 
