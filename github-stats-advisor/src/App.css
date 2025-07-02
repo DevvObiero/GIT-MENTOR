@@ -21,3 +21,6 @@ html{
     font-display: swap;
 }
 
+html {
+  scroll-behavior: smooth;
+}
