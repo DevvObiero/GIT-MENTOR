@@ -8,7 +8,7 @@ const About = () => {
   return (
 
 
-    <div className="max-w-3xl mx-auto p-6 mt-3.5">
+    <div className="max-w-4xl mx-auto p-6 mt-3.5">
      
       <ShinyText
   text="About GitHub Mentor"
