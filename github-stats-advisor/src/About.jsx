@@ -1,14 +1,28 @@
 import React from 'react';
+import ShinyText from './components/ShinyText';
+import TechCarousel from './components/TechCarousel';
+
+
 
 const About = () => {
   return (
+
+
     <div className="max-w-3xl mx-auto p-6 mt-3.5">
-      <h1 className="text-4xl font-bold text-gray-800 mb-4">About GitHub Stats Advisor</h1>
+     
+      <ShinyText
+  text="About GitHub Mentor"
+  speed={3}
+  className="text-4xl font-bold text-gray-800 mb-4"
+/>
+
 
       <p className="text-lg text-gray-700 mb-6">
         GitHub Stats Advisor is a tool that helps developers not just see their GitHub activity — but understand it.
         It analyzes your public profile and gives you personalized advice on how to grow as a developer.
       </p>
+<TechCarousel />
+
 
       <h2 className="text-2xl font-semibold text-gray-800 mb-2">Why I Built This</h2>
       <p className="text-gray-700 mb-6">
@@ -32,13 +46,7 @@ const About = () => {
         <li>Track progress over time (coming soon!)</li>
       </ul>
 
-      <h2 className="text-2xl font-semibold text-gray-800 mb-2">Built With</h2>
-      <ul className="list-disc list-inside text-gray-700 mb-6">
-        <li>React + Tailwind CSS</li>
-        <li>GitHub REST API v3</li>
-        <li>Chart.js (coming soon for data visualizations)</li>
-        <li>Optional backend: Node.js + MySQL or Firebase</li>
-      </ul>
+
 
       <h2 className="text-2xl font-semibold text-gray-800 mb-2">Let’s Grow Together </h2>
       <p className="text-gray-700">
@@ -76,6 +84,33 @@ const About = () => {
           GitHub Readme Stats API by Anurag Hazra
         </a>.
       </p>
+
+      {/* Meet the Builder Section */}
+      <div className="mt-16 border-t pt-10 text-center">
+        <img
+          src="https://storage.ko-fi.com/cdn/useruploads/cbe5eaa4-88c3-4bfc-9137-c5d20c5bafe9_e701eeca-e6da-4171-b394-3d62da6c5b76.png"
+          alt="Paul Obiero"
+          className="w-24 h-24 rounded-full mx-auto shadow-lg mb-4 object-cover"
+        />
+            <ShinyText
+  text="Meet the Builder Paul Obiero "
+  speed={3}
+  className="text-3xl font-bold text-gray-800 mb-4"
+/>
+
+        <p className="text-gray-600 max-w-md mx-auto mt-2">
+          I'm a frontend developer and aspiring software engineer passionate about building tools that empower others.
+          I believe in learning out loud and building solutions that solve real problems in the tech community.
+        </p>
+        <a
+          href="https://paulobiero.netlify.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block mt-4 px-4 py-2 bg-purple-600 text-white rounded hover:bg-blue-700 transition"
+        >
+          Visit My Portfolio
+        </a>
+      </div>
     </div>
   );
 };

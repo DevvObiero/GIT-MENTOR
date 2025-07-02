@@ -5,6 +5,7 @@ export default function Navbar() {
     <header className="mt-2 px-1 flex items-center justify-between">
       <div className="flex items-center">
         <img src="/vite.svg" alt="LOGO" className="h-8 mr-2" />
+        
         <span className="font-bold text-lg">GIT MENTOR</span>
       </div>
 

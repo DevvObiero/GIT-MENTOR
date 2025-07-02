@@ -24,3 +24,34 @@ html{
 html {
   scroll-behavior: smooth;
 }
+
+@keyframes shine {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: -100%;
+  }
+}
+
+.animate-shine {
+  animation: shine 5s linear infinite;
+}
+
+
+
+
+
+/* carousel  */
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
