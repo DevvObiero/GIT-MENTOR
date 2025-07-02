@@ -15,7 +15,7 @@ function Home() {
       {/* Hero Section */}
       <div className="h-[400px] mt-4 relative">
         <Squares 
-          speed={0.2} 
+          speed={0.001} 
           squareSize={40}
           direction="down"
           borderColor="#fff"
