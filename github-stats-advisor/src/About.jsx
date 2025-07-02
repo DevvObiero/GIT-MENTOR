@@ -40,7 +40,7 @@ const About = () => {
         <li>Optional backend: Node.js + MySQL or Firebase</li>
       </ul>
 
-      <h2 className="text-2xl font-semibold text-gray-800 mb-2">Let’s Grow Together 🚀</h2>
+      <h2 className="text-2xl font-semibold text-gray-800 mb-2">Let’s Grow Together </h2>
       <p className="text-gray-700">
         This project is for devs who want more than just numbers — they want progress. If you have ideas, feedback, or want to contribute, feel free to reach out or submit a pull request.
       </p>
