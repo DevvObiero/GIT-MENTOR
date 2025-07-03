@@ -14,7 +14,7 @@ const TechCarousel = () => {
         {frontendIcons.concat(frontendIcons).map((icon, index) => (
           <i
             key={index}
-            className={`bx ${icon} hover:text-purple-600 transition duration-300`}
+            className={`bx ${icon} hover:text-white transition duration-300`}
           ></i>
         ))}
       </div>

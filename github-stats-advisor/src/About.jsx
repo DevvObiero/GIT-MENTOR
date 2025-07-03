@@ -98,9 +98,10 @@ const About = () => {
   className="text-3xl font-bold text-gray-800 mb-4"
 />
 
-        <p className="text-gray-600 max-w-md mx-auto mt-2">
-          I'm a frontend developer and aspiring software engineer passionate about building tools that empower others.
-          I believe in learning out loud and building solutions that solve real problems in the tech community.
+        <p className="text-gray-600 mx-auto mt-2">
+          I'm a frontend developer passionate about crafting beautiful, accessible, and user-friendly interfaces. I believe in learning out loud and building solutions that solve real problems in the tech community. I'm currently seeking my first opportunity as a frontend developer where I can apply my skills, grow with a supportive team, and create tools that empower and inspire others.
+
+
         </p>
         <a
           href="https://paulobiero.netlify.app"
