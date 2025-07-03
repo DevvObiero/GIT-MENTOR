@@ -43,7 +43,7 @@ function Home() {
           {username.trim() && (
             <button
               onClick={handleSubmit}
-              className="bg-purple-600 hover:bg-purple-700 text-white p-2 rounded-md transition duration-300"
+              className="bg-gray-600 hover:bg-purple-700 text-white p-2 rounded-md transition duration-300"
             >
               <FaArrowRight />
             </button>
