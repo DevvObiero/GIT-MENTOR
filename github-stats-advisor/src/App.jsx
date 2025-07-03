@@ -26,11 +26,11 @@ function Home() {
       />
 
       <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 pointer-events-none">
-        <ShinyText
-          text="  Get Personalized GitHub Growth Advice"
-          speed={4}
-          className="text-4xl font-bold text-white mb-4"
-        />
+      <ShinyText
+  text="  Get Personalized GitHub Growth Advice"
+  speed={4}
+  className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4"
+/>
 
         <div className="flex items-center gap-2 w-full justify-center pointer-events-auto">
           <input 

@@ -8,10 +8,11 @@ export default function Navbar() {
   return (
     <header className="mt-2 px-4 py-2 flex items-center justify-between bg-black text-white relative">
       {/* Logo and Title */}
-      <div className="flex items-center">
-        <img src="/vite.svg" alt="LOGO" className="h-8 mr-2" />
-        <span className="font-bold text-lg">GIT MENTOR</span>
-      </div>
+     <div className="flex items-center">
+  <img src="/vite.svg" alt="LOGO" className="h-6 sm:h-7 md:h-8 mr-2" />
+  <span className="font-bold text-base sm:text-lg md:text-xl">GIT MENTOR</span>
+</div>
+
 
       {/* Desktop Nav */}
       <ul className="hidden md:flex gap-8 list-none">
