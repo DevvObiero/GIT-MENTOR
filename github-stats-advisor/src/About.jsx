@@ -5,11 +5,11 @@ import TechCarousel from './components/TechCarousel';
 const About = () => {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 py-8">
-      <ShinyText
-        text="About GitHub Mentor"
-        speed={3}
-        className="text-2xl sm:text-2xl font-bold text-gray-800 mb-6 text-center"
-      />
+    <ShinyText
+  text="About GitHub Mentor"
+  speed={3}
+  className="text-2xl sm:text-4xl font-bold text-gray-800 mb-6 text-center"
+/>
 
       <p className="text-base sm:text-lg text-gray-700 mb-6 leading-relaxed text-center sm:text-left">
         GitHub Stats Advisor is a tool that helps developers not just see their GitHub activity — but understand it.
