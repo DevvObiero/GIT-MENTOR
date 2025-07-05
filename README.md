@@ -4,7 +4,7 @@
 
 > I'll use myself as evidence!
 
-<img width="400" alt="GitHub Mentor Preview" src="https://github.com/user-attachments/assets/af05b746-0b55-4fad-bd66-80e03f7c07b5" />
+<img width="600" alt="GitHub Mentor Preview" src="https://github.com/user-attachments/assets/af05b746-0b55-4fad-bd66-80e03f7c07b5" />
 
 ![GitHub Stats](https://github-readme-stats.vercel.app/api?username=DevObiero&theme=vue-dark&show_icons=true&hide_border=true&count_private=true)
 
