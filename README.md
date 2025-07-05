@@ -2,8 +2,12 @@
 
 **GitHub Mentor** is a tool that analyzes your GitHub profile and provides personalized, actionable advice to help you grow as a developer — beyond just green squares and stars.
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=DevvObiero&theme=vue-dark&show_icons=true&hide_border=true&co<img width="350" alt="Screenshot 2025-06-27 194743" src="https://github.com/user-attachments/assets/538e1c2b-bf8f-4bf9-a452-cb7a4187c590" />
-unt_private=true)
+I'll use myself as eveidence !
+<img width="350" alt="Screenshot 2025-06-27 194743" src="https://github.com/user-attachments/assets/af05b746-0b55-4fad-bd66-80e03f7c07b5" />
+
+
+ 
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=DevvObiero&theme=vue-dark&show_icons=true&hide_border=true&count_private=true)
 
 ---FIRTST OF ALLL!!!
 PLEASE STAR THE REPO if you found it helpfull Or else!!!!😭
