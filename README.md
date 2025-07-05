@@ -3,7 +3,7 @@
 **GitHub Mentor** is a tool that analyzes your GitHub profile and provides personalized, actionable advice to help you grow as a developer — beyond just green squares and stars.
 
 I'll use myself as eveidence !
-<img width="350" alt="Screenshot 2025-06-27 194743" src="https://github.com/user-attachments/assets/af05b746-0b55-4fad-bd66-80e03f7c07b5" />
+<img width="400" alt="Screenshot 2025-06-27 194743" src="https://github.com/user-attachments/assets/af05b746-0b55-4fad-bd66-80e03f7c07b5" />
 
 
  
