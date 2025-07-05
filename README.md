@@ -1,6 +1,6 @@
 # 🚀 GitHub Mentor
 
-**GitHub Mentor** is a tool that analyzes your GitHub profile and provides personalized, actionable advice to help you grow as a developer — beyond just green squares and stars.
+**GitHub Mentor** is a tool that analyzes your GitHub profile and provides personalized, actionable advice to help you grow your ratings as a developer — beyond just green squares and stars.
 
 > I'll use myself as evidence!
 
