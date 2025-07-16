@@ -11,9 +11,38 @@ import './App.css';
 function Home() {
   const [username, setUsername] = useState('');
 
-  const handleSubmit = () => {
-    console.log('Searching GitHub user:', username);
-  };
+ const [stats, setStats] = useState(null);
+const [loading, setLoading] = useState(false);
+
+const handleSubmit = async () => {
+  if (!username) return;
+  setLoading(true);
+  try {
+    // Fetch repos to calculate total stars
+    const reposRes = await fetch(`https://api.github.com/users/${username}/repos`);
+    const repos = await reposRes.json();
+    const totalStars = repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
+
+    // Fetch PRs
+    const prRes = await fetch(`https://api.github.com/search/issues?q=type:pr+author:${username}`);
+    const prData = await prRes.json();
+
+    // Fetch Issues
+    const issueRes = await fetch(`https://api.github.com/search/issues?q=type:issue+author:${username}`);
+    const issueData = await issueRes.json();
+
+    setStats({
+      stars: totalStars,
+      pullRequests: prData.total_count,
+      issues: issueData.total_count,
+    });
+  } catch (err) {
+    console.error("Error fetching GitHub data", err);
+    setStats(null);
+  }
+  setLoading(false);
+};
+
 
   return (
     <div className="h-[400px] mt-4 relative">
@@ -49,6 +78,19 @@ function Home() {
             </button>
           )}
         </div>
+        {loading && <p className="text-white mt-4">Loading stats...</p>}
+
+{stats && (
+  <div className="mt-6 text-white space-y-2">
+    <p>⭐️ Total Stars: <strong>{stats.stars}</strong></p>
+    <p>🔃 Pull Requests: <strong>{stats.pullRequests}</strong></p>
+            <p>🐛 Issues Opened: <strong>{stats.issues}</strong></p>
+            <p>🐛 Issues Opened: <strong>{stats.issues}</strong></p>
+            
+
+  </div>
+)}
+       
       </div>
     </div>
   );
