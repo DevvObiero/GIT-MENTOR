@@ -101,9 +101,16 @@ html {
   text-align: center;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Yoster';
   src: url('./assets/fonts/yoster.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+@font-face {
+  font-family: 'Born2bSporty';
+  src: url('./assets/fonts/Born2bSportyFS.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }

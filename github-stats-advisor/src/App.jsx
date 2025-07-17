@@ -65,8 +65,9 @@ function Home() {
   value={username}
   onChange={(e) => setUsername(e.target.value)}
   className="px-4 py-2 rounded-md text-black bg-white max-w-sm w-full text-center"
-  style={{ fontFamily: 'Yoster' }}
+  style={{ fontFamily: 'Born2bSporty' }}
 />
+
 
             {username.trim() && (
               <button
