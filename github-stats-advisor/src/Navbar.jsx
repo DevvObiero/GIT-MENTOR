@@ -16,8 +16,9 @@ export default function Navbar() {
 
       {/* Desktop Nav */}
       <ul className="hidden md:flex gap-8 list-none">
-        <li><Link className="hover:text-purple-500" to="/">Stats</Link></li>
         <li><Link className="hover:text-purple-500" to="/">Insights</Link></li>
+        <li><Link className="hover:text-purple-500" to="/">Achivements</Link></li>
+        <li><Link className="hover:text-purple-500" to="/">Readme</Link></li>
         <li><Link className="hover:text-purple-500" to="/about">About</Link></li>
       </ul>
 
