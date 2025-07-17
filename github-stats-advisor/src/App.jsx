@@ -78,7 +78,10 @@ const handleSubmit = async () => {
             </button>
           )}
         </div>
-        {loading && <p className="text-white mt-4">Loading stats...</p>}
+        {loading && <p className="text-white mt-4">
+        
+        <span class="loader"></span>
+        </p>}
 
 {stats && (
   <div className="mt-6 text-white space-y-2">
