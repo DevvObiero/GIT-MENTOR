@@ -1,6 +1,8 @@
 import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
+import CardPreview from './components/CardPreview';
+
 
 import Squares from './Squares';
 import ShinyText from './components/ShinyText';
@@ -10,33 +12,12 @@ import './App.css';
 
 function Home() {
   const [username, setUsername] = useState('');
-  const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = async () => {
+  const handleSubmit = () => {
     if (!username) return;
     setLoading(true);
-    try {
-      const reposRes = await fetch(`https://api.github.com/users/${username}/repos`);
-      const repos = await reposRes.json();
-      const totalStars = repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
-
-      const prRes = await fetch(`https://api.github.com/search/issues?q=type:pr+author:${username}`);
-      const prData = await prRes.json();
-
-      const issueRes = await fetch(`https://api.github.com/search/issues?q=type:issue+author:${username}`);
-      const issueData = await issueRes.json();
-
-      setStats({
-        stars: totalStars,
-        pullRequests: prData.total_count,
-        issues: issueData.total_count,
-      });
-    } catch (err) {
-      console.error("Error fetching GitHub data", err);
-      setStats(null);
-    }
-    setLoading(false);
+    setTimeout(() => setLoading(false), 1000); // Optional delay effect
   };
 
   return (
@@ -59,15 +40,14 @@ function Home() {
           />
 
           <div className="flex items-center gap-2 w-full justify-center pointer-events-auto">
- <input
-  type="text"
-  placeholder="Enter GitHub username"
-  value={username}
-  onChange={(e) => setUsername(e.target.value)}
-  className="px-4 py-2 rounded-md text-black bg-white max-w-sm w-full text-center"
-  style={{ fontFamily: 'Born2bSporty' }}
-/>
-
+            <input
+              type="text"
+              placeholder="Enter GitHub username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="px-4 py-2 rounded-md text-black bg-white max-w-sm w-full text-center"
+              style={{ fontFamily: 'Born2bSporty' }}
+            />
 
             {username.trim() && (
               <button
@@ -85,15 +65,9 @@ function Home() {
         </div>
       </div>
 
-      {/* Stats Section (now below the hero) */}
-      <div className="text-white text-center mt-10 px-4">
-        {stats && (
-          <div className="bg-gray-800 p-6 rounded-md inline-block space-y-2 shadow-md">
-            <p>⭐️ Total Stars: <strong>{stats.stars}</strong></p>
-            <p>🔃 Pull Requests: <strong>{stats.pullRequests}</strong></p>
-            <p>🐛 Issues Opened: <strong>{stats.issues}</strong></p>
-          </div>
-        )}
+      {/* GitHub Card Preview Section */}
+      <div className="mt-10 px-4 text-center">
+        <CardPreview username={username} />
       </div>
     </>
   );
