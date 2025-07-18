@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import StarBorder from "./components/StartBorder"; 
+
+// ct
 // Install Lucide icons or replace with SVGs
+
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,15 +49,17 @@ setStars(data.stargazers_count);
       </ul>
 
       {/* CTA Button */}
-<a
+
+<StarBorder
+  as="a"
   href="https://github.com/DevvObiero/GIT-MENTOR"
   target="_blank"
   rel="noopener noreferrer"
-  className="hidden md:block text-white border border-white rounded px-4 py-2 font-bold transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:scale-105"
+  color="#fff" // white glow
+  speed="6s"
 >
   ⭐ {stars !== null ? `${stars} stars` : "Loading..."}
-</a>
-
+</StarBorder>
 
       {/* Burger Menu Icon for Mobile */}
       <button
