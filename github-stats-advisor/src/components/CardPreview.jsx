@@ -17,15 +17,22 @@ const buildURL = () => {
 };
 
 
-  const handleCopy = async () => {
-    try {
-      await navigator.clipboard.writeText(buildURL());
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000); // Reset after 2 seconds
-    } catch (err) {
-      console.error("Failed to copy: ", err);
-    }
-  };
+const handleCopy = async () => {
+  const htmlCode = `<img src="https://github-readme-stats.vercel.app/api?username=DevvObiero&theme=vue-dark&show_icons=true&hide_border=true&count_private=true" alt="DevvObiero's GitHub Stats" />`;
+
+  try {
+    await navigator.clipboard.writeText(htmlCode);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000); // Hide after 2s
+  } catch (error) {
+    console.error("Failed to copy text:", error);
+    // Optional: show some error UI
+  }
+};
+
+
+
+
 
   return (
     <div className="flex flex-col mt-4 py-15 items-center justify-center space-y-6 text-gray-600 w-full">
@@ -68,23 +75,30 @@ const buildURL = () => {
 
         {/* Copy to Clipboard Button */}
         <div className="mt-4 text-center">
-      
         
-<ShinyText
+      <ShinyText
   onClick={handleCopy}
   text="Copy To Clipboard"
   speed={3}
-  className="cursor-pointer mb-6 text-center"
+  className="mb-6 text-center"
 />
 
-            
+
               </div>
               <div  className="mt-2 text-center">
-                  {copied && (
-            <p className="text-green-500 mt-2 font-medium">✅ Copied!</p>
-          )}
+    
+
+
               </div>
-      </div>
+     
+          </div>
+                      <div className="mt-5 text-center">
+  {copied && (
+    <p className="text-green-500 font-medium transition-opacity duration-300">
+      copied to clipboard
+    </p>
+  )}
+</div>
     </div>
   );
 }

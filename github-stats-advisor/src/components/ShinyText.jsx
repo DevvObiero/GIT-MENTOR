@@ -1,8 +1,9 @@
-const ShinyText = ({ text, disabled = false, speed = 5, className = '' }) => {
+const ShinyText = ({ text, disabled = false, speed = 5, className = '', onClick }) => {
   const animationDuration = `${speed}s`;
 
   return (
     <div
+      onClick={onClick} // ✅ Add this line!
       className={`text-[#b5b5b5a4] bg-clip-text inline-block ${disabled ? '' : 'animate-shine'} ${className}`}
       style={{
         backgroundImage:
@@ -10,6 +11,7 @@ const ShinyText = ({ text, disabled = false, speed = 5, className = '' }) => {
         backgroundSize: '200% 100%',
         WebkitBackgroundClip: 'text',
         animationDuration: animationDuration,
+        cursor: disabled ? 'not-allowed' : 'pointer', // Optional: ensure pointer
       }}
     >
       {text}

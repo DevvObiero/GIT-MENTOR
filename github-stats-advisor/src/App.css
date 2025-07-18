@@ -123,3 +123,8 @@ html {
   }
 }
 
+
+
+.glow:hover {
+  color: white;
+}
