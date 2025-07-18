@@ -23,7 +23,7 @@ function Home() {
   return (
     <>
       {/* Hero Section */}
-      <div className="h-[400px] mt-4 relative">
+      <div className="h-[400px] mt-9 relative">
         <Squares 
           speed={0.001} 
           squareSize={40}
