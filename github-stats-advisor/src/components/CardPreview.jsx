@@ -18,7 +18,8 @@ const buildURL = () => {
 
 
 const handleCopy = async () => {
-  const htmlCode = `<img src="https://github-readme-stats.vercel.app/api?username=DevvObiero&theme=vue-dark&show_icons=true&hide_border=true&count_private=true" alt="DevvObiero's GitHub Stats" />`;
+  const dynamicUrl = buildURL();
+  const htmlCode = `<img src="${dynamicUrl}" alt="${username || 'DevvObiero'}'s GitHub Stats" />`;
 
   try {
     await navigator.clipboard.writeText(htmlCode);
@@ -26,7 +27,6 @@ const handleCopy = async () => {
     setTimeout(() => setCopied(false), 2000); // Hide after 2s
   } catch (error) {
     console.error("Failed to copy text:", error);
-    // Optional: show some error UI
   }
 };
 
