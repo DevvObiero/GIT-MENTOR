@@ -1,5 +1,5 @@
 # 🚀 GitHub Mentor
-
+https://github-readme-stats.vercel.app/api?username=DevvObiero&theme=dark&hide_border=true
 **GitHub Mentor** is a tool that analyzes your GitHub profile and provides personalized, actionable advice to help you grow your ratings as a developer —Since you probably have the stats on your profile readme but dont know how to move to the next level😂😂sucks right?Been there!!I've got youu!!!
 .
 
