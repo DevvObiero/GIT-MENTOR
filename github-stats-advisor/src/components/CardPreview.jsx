@@ -15,7 +15,7 @@ export default function CardPreview({ username }) {
   };
 
   return (
-    <div className="flex flex-col   mt-4 py-8   items-center justify-center space-y-6 text-white w-full">
+    <div className="flex flex-col   mt-4 py-15   items-center justify-center space-y-6 text-gray-600  w-full">
       
       {/* Theme Dropdown */}
     
