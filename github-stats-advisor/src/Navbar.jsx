@@ -81,9 +81,19 @@ setStars(data.stargazers_count);
           <li><Link onClick={() => setIsOpen(false)} to="/">Insights</Link></li>
           <li><Link onClick={() => setIsOpen(false)} to="/about">About</Link></li>
         </ul>
-        <button className="mt-8 w-full text-white border border-white rounded px-4 py-2 font-bold">
-          App Coming Soon
-        </button>
+        <div className='mt-4' >
+             <StarBorder
+  as="a"
+  href="https://github.com/DevvObiero/GIT-MENTOR"
+  target="_blank"
+  rel="noopener noreferrer"
+  color="#fff" // white glow
+  speed="6s"
+>
+  ⭐ {stars !== null ? `${stars} stars` : "Loading..."}
+</StarBorder>
+
+    </div>
       </div>
 
       {/* Overlay when sidebar is open */}

@@ -41,6 +41,9 @@
   z-index: 1;
 }
 
+
+
+
 .inner-content:hover {
   background: #111;
 }
@@ -65,4 +68,12 @@
     transform: translate(100%, 0%);
     opacity: 0;
   }
+}
+
+@media (max-width: 600px) {
+    .inner-content {
+        font-size: 10px;
+        padding: 7px 11px;
+        border-radius: 14px;
+    }
 }
