@@ -53,14 +53,7 @@ export default function CardPreview({ username }) {
           Show Private Commits
         </label>
 
-        <label className="flex items-center gap-2">
-          <input
-            type="checkbox"
-            checked={hideBorder}
-            onChange={() => setHideBorder(!hideBorder)}
-          />
-          Hide Border
-        </label>
+       
       </div>
 
       {/* Preview Card */}
