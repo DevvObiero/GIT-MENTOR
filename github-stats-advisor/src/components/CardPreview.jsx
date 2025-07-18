@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
+import ShinyText from './ShinyText';
+
 
 const themes = ["default", "dark", "radical", "merko", "tokyonight", "cobalt", "synthwave", "highcontrast", "dracula"];
 
 export default function CardPreview({ username }) {
-  const [theme, setTheme] = useState("cobalt");
   const [showPrivate, setShowPrivate] = useState(false);
-  const [hideBorder, setHideBorder] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [theme, setTheme] = useState("dark");
 
-  const buildURL = () => {
-    let url = `https://github-readme-stats.vercel.app/api?username=${username || 'DevvObiero'}&theme=${theme}`;
-    if (showPrivate) url += "&count_private=true";
-    if (hideBorder) url += "&hide_border=true";
-    return url;
-  };
+
+const buildURL = () => {
+  let url = `https://github-readme-stats.vercel.app/api?username=${username || 'DevvObiero'}&theme=${theme}&hide_border=true`;
+  if (showPrivate) url += "&count_private=true";
+  return url;
+};
+
 
   const handleCopy = async () => {
     try {
@@ -66,13 +68,16 @@ export default function CardPreview({ username }) {
 
         {/* Copy to Clipboard Button */}
         <div className="mt-4 text-center">
-          <button
-            onClick={handleCopy}
-            className=" hover:text-purple-950 text-white font-semibold py-2 px-4 rounded transition-all duration-200"
-          >
-             Copy To clipboard
-          </button>
+      
         
+<ShinyText
+  onClick={handleCopy}
+  text="Copy To Clipboard"
+  speed={3}
+  className="cursor-pointer mb-6 text-center"
+/>
+
+            
               </div>
               <div  className="mt-2 text-center">
                   {copied && (
