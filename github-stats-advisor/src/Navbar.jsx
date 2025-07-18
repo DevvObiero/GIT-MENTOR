@@ -4,7 +4,7 @@ import { Menu, X } from 'lucide-react'; // Install Lucide icons or replace with 
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-
+//  py-2
   return (
     <header className="mt-2 
       flex items-center justify-between bg-black text-white relative">
