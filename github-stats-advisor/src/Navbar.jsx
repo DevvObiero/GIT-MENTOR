@@ -1,17 +1,38 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react'; // Install Lucide icons or replace with SVGs
+import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from 'react';
+// Install Lucide icons or replace with SVGs
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [stars, setStars] = useState(null);
+
+
+  useEffect(() => {
+  const fetchStars = async () => {
+    try {
+    const res = await fetch('https://api.github.com/repos/DevvObiero/GIT-MENTOR');
+const data = await res.json();
+setStars(data.stargazers_count);
+
+    } catch (error) {
+      console.error("Failed to fetch stars", error);
+    }
+  };
+
+  fetchStars();
+}, []);
+
+
 //  py-2
   return (
-    <header className="mt-2 
+    <header className="mt-2  
+    smaller 
       flex items-center justify-between bg-black text-white relative">
       {/* Logo and Title */}
      <div className="flex items-center">
   <img src="/vite.svg" alt="LOGO" className="h-6 sm:h-7 md:h-8 mr-2" />
-  <span className="font-bold text-base sm:text-lg md:text-xl">GIT MENTOR</span>
+  <span className="font-bold smaller  text-base sm:text-lg md:text-xl">GIT MENTOR</span>
 </div>
 
 
@@ -24,9 +45,10 @@ export default function Navbar() {
       </ul>
 
       {/* CTA Button */}
-      <button className="hidden md:block text-white border border-white rounded px-4 py-2 font-bold">
-        App Coming Soon
-      </button>
+   <button className="hidden md:block text-white border border-white rounded px-4 py-2 font-bold">
+  ⭐ {stars !== null ? `${stars} stars` : "Loading..."}
+</button>
+
 
       {/* Burger Menu Icon for Mobile */}
       <button

@@ -114,3 +114,12 @@ html {
   font-weight: normal;
   font-style: normal;
 }
+
+
+
+@media (max-width: 900px) and (min-width: 600px) {
+  .smaller {
+    font-size: 12px;
+  }
+}
+
