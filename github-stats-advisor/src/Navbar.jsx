@@ -45,9 +45,14 @@ setStars(data.stargazers_count);
       </ul>
 
       {/* CTA Button */}
-   <button className="hidden md:block text-white border border-white rounded px-4 py-2 font-bold">
+ <a
+  href="https://github.com/DevvObiero/GIT-MENTOR"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="hidden md:block text-white border border-white rounded px-4 py-2 font-bold"
+>
   ⭐ {stars !== null ? `${stars} stars` : "Loading..."}
-</button>
+</a>
 
 
       {/* Burger Menu Icon for Mobile */}
