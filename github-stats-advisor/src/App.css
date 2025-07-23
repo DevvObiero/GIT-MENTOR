@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+.logo {
+  height: 53px !important; /* or any desired size */
+  width: auto;
+}
+
 html{
   background-color: black;
   color:white;
@@ -121,7 +126,17 @@ html {
   .smaller {
     font-size: 12px;
   }
+  
 }
+
+@media (max-width: 600px) {
+
+  .logo {
+    height: 37px !important; /* Adjusted for smaller screens */
+    width: auto;
+  }
+ }
+
 
 
 

@@ -34,8 +34,8 @@ setStars(data.stargazers_count);
     smaller 
       flex items-center justify-between bg-black text-white relative">
       {/* Logo and Title */}
-     <div className="flex items-center">
-  <img src="/vite.svg" alt="LOGO" className="h-6 sm:h-7 md:h-8 mr-2" />
+     <div className="flex name items-center">
+  <img src="/logo.svg" alt="LOGO" className="h-18 w-auto sm:h-7 md:h-8 mr-2 logo" />
   <span className="font-bold smaller  text-base sm:text-lg md:text-xl">GIT MENTOR</span>
 </div>
 
