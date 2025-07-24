@@ -66,7 +66,7 @@ function Home() {
       </div>
 
       {/* GitHub Card Preview Section */}
-      <div className="mt-10 px-4 text-center">
+      <div className="mt-15 px-4 text-center">
         <CardPreview username={username} />
       </div>
     </>
