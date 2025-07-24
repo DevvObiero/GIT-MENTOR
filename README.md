@@ -1,4 +1,4 @@
-<img width="1024" height="1024" alt="ChatGPT Image Jul 24, 2025, 03_05_41 AM" src="https://github.com/user-attachments/assets/15b4aef4-6eef-4642-8b42-e9d0cbd784e1" />
+<img width="464" height="1024" alt="ChatGPT Image Jul 24, 2025, 03_05_41 AM" src="https://github.com/user-attachments/assets/15b4aef4-6eef-4642-8b42-e9d0cbd784e1" />
 # 🚀 GitHub Mentor
 **GitHub Mentor** is a tool that analyzes your GitHub profile and provides personalized, actionable advice to help you grow your ratings as a developer —Since you probably have the stats on your profile readme but dont know how to move to the next level😂😂sucks right?Been there!!I've got youu!!!
 .
