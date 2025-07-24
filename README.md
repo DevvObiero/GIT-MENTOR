@@ -1,5 +1,4 @@
-#🚀 GitHub Mentor
-**GitHub Mentor** 
+#🚀 GitHub Mentor**GitHub Mentor** 
 is a tool that analyzes your GitHub profile and provides personalized, actionable advice to help you grow your ratings as a developer —Since you probably have the stats on your profile readme but dont know how to move to the next level😂😂sucks right?Been there!!I've got youu!!!
 .
 
@@ -72,6 +71,7 @@ Coming soon!
 ## 🧑‍💻 Meet the  Annoyingly Handsome  Builder(❁´◡`❁)
 
 ![Paul Obiero](https://storage.ko-fi.com/cdn/useruploads/cbe5eaa4-88c3-4bfc-9137-c5d20c5bafe9_e701eeca-e6da-4171-b394-3d62da6c5b76.png)
+
 <img width="164" height="164" alt="ChatGPT Image Jul 24, 2025, 03_05_41 AM" src="https://github.com/user-attachments/assets/15b4aef4-6eef-4642-8b42-e9d0cbd784e1" />
 
 
