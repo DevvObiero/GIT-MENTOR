@@ -2,6 +2,8 @@ import { Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import CardPreview from './components/CardPreview';
+import AdviceSection from './components/AdviceSection';
+
 
 
 import Squares from './Squares';
@@ -67,7 +69,9 @@ function Home() {
 
       {/* GitHub Card Preview Section */}
       <div className="mt-15 px-4 text-center">
-        <CardPreview username={username} />
+       <CardPreview username={username} />
+<AdviceSection username={username} /> {/* ✅ Pass username */}
+
       </div>
     </>
   );
