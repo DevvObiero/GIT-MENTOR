@@ -90,14 +90,7 @@ If this project inspired or helped you, consider fueling it with a ☕ or a smil
 [![Buy Me A Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://ko-fi.com/devvobiero)
 
 ---
-### Logo Progression
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/8f0e0dca-3f7a-45c3-9f0e-1a7471813bc8" height="150" alt="v1 logo" />
-  <img src="https://github.com/user-attachments/assets/8d76ec8e-df19-40fa-b8c2-bb4efcd5c62b" height="150" alt="v2 logo" />
-  <img src="https://github.com/user-attachments/assets/fa81f6d2-7ed7-47cd-8a31-2304f5e33f9d" height="150" alt="v3 logo" />
-  <img src="https://github.com/user-attachments/assets/56aa1039-98dc-43f3-ae78-abc4e7827d10" height="150" alt="v4 logo" />
-</p>
 
 ## 🤝 Contributing
 
@@ -116,6 +109,14 @@ Want to improve it? Here's how:
 
 MIT License. You can do what you want, but don’t forget to give credit where it’s due. 😎
 
+### Logo Progression
+
+<p align="center">
+  <img width="150" height="150" alt="vite" src="https://github.com/user-attachments/assets/7c6728d7-8d53-4e81-8e1b-19b95a8ad7db" />
+  <img width="150" height="225" alt="ChatGPT Image Jul 24, 2025, 02_08_23 AM" src="https://github.com/user-attachments/assets/f446f2e7-6577-43f5-84e1-e424ea91469d" />
+  <img width="150" height="150" alt="ChatGPT Image Jul 24, 2025, 02_17_45 AM" src="https://github.com/user-attachments/assets/5a6387a5-1b62-44a5-b30e-00939108cac8" />
+  <img width="150" height="150" alt="ChatGPT Image Jul 24, 2025, 03_05_41 AM" src="https://github.com/user-attachments/assets/90f4a582-f11f-4bb5-9637-23d8ac10e355" />
+</p>
 
 
 
