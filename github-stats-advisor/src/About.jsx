@@ -1,6 +1,9 @@
 import React from 'react';
 import ShinyText from './components/ShinyText';
 import TechCarousel from './components/TechCarousel';
+import TargetCursor from './components/TargetCursor';
+
+
 
 const About = () => {
   return (
@@ -11,6 +14,13 @@ const About = () => {
   className="text-2xl sm:text-4xl font-bold text-gray-800 mb-6 text-center"
 />
 
+      
+             <div>
+      <TargetCursor 
+        hideDefaultCursor={true}
+      />
+      
+    </div>
       <p className="text-base sm:text-lg text-gray-700 mb-6 leading-relaxed text-center sm:text-left">
         GitHub Stats Advisor is a tool that helps developers not just see their GitHub activity — but understand it.
         It analyzes your public profile and gives you personalized advice on how to grow as a developer.
@@ -67,7 +77,7 @@ const About = () => {
           href="https://ko-fi.com/devvobiero"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-purple-600 hover:underline"
+          className="text-purple-600 hover:underline cursor-target"
         >
           Support the creator on Ko-fi
         </a>
@@ -77,7 +87,7 @@ const About = () => {
         This project uses data powered in part by the{' '}
         <a
           href="https://github.com/anuraghazra/github-readme-stats"
-          className="text-blue-500 hover:underline"
+          className="text-blue-500 hover:underline cursor-target"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -101,12 +111,11 @@ const About = () => {
         <p className="text-gray-600 text-base leading-relaxed max-w-xl mx-auto mt-2">
           I'm an annoyingly handsome frontend developer Very  very  passionate about crafting beautiful, accessible, and user-friendly interfaces. I believe in learning out loud and building solutions that solve real problems in the tech community. I'm currently seeking my first opportunity as a frontend developer where I can apply my skills, grow with a supportive team, and create tools that empower and inspire others.(❁´◡`❁)
         </p>
-
         <a
           href="https://paulobiero.netlify.app"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block mt-4 px-4 py-2 bg-purple-600 text-white rounded hover:bg-blue-700 transition"
+          className="inline-block mt-4 px-4 py-2 cursor-target bg-purple-600 text-white rounded hover:bg-blue-700 transition"
         >
           Visit My Portfolio
         </a>
