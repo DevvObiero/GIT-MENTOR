@@ -9,6 +9,8 @@ import Navbar from './Navbar';
 import About from './About';
 import Readme from './components/Readme'; 
 import './App.css';
+import TargetCursor from './components/TargetCursor';
+
 
 function Home() {
   const [username, setUsername] = useState('');
@@ -24,6 +26,12 @@ function Home() {
   return (
     <>
       <div className="h-[400px] mt-9 relative">
+             <div>
+      <TargetCursor 
+        hideDefaultCursor={true}
+      />
+      
+    </div>
         <Squares speed={0.001} squareSize={40} direction="down" borderColor="#fff" hoverFillColor="#4c51bf" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 pointer-events-none">
           <ShinyText
@@ -37,13 +45,14 @@ function Home() {
     handleSubmit();
   }}
   className="flex items-center gap-2 w-full justify-center pointer-events-auto"
->
+          >
+
   <input
-    type="text"
+              type="text"
     placeholder="Enter GitHub username"
     value={username}
     onChange={(e) => setUsername(e.target.value)}
-    className="px-4 py-2 rounded-md text-black bg-white max-w-sm w-full text-center"
+    className="px-4 py-2 rounded-md cursor-target text-black bg-white max-w-sm w-full text-center"
     style={{ fontFamily: 'Born2bSporty' }}
   />
   {username.trim() && (

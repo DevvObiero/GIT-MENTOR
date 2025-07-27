@@ -72,7 +72,7 @@ export default function CardPreview({ username, setStats }) {
           <select
             value={theme}
             onChange={(e) => setTheme(e.target.value)}
-            className="text-white bg-black p-2 rounded"
+            className="text-white cursor-target bg-black p-2 rounded"
           >
             {['default', 'dark', 'radical', 'merko', 'tokyonight', 'cobalt', 'synthwave', 'highcontrast', 'dracula'].map(t => (
               <option key={t} value={t}>{t.charAt(0).toUpperCase() + t.slice(1)}</option>
@@ -83,14 +83,15 @@ export default function CardPreview({ username, setStats }) {
           <input
             type="checkbox"
             checked={showPrivate}
+            className="cursor-target"
             onChange={() => setShowPrivate(!showPrivate)}
           />
           Show Private Commits
         </label>
       </div>
       <div className="w-full max-w-md px-4 relative">
-        {loading && <p className="text-blue-500">Loading stats...</p>}
-        {error && <p className="text-red-500">{error}</p>}
+        {/* {loading && <p className="text-blue-500">Loading stats...</p>} */}
+        {/* {error && <p className="text-red-500">{error}</p>} */}
         <img src={buildURL()} alt="GitHub stats preview" className="mx-auto w-full rounded-xl shadow-lg" />
         <div className="mt-4 text-center">
         
@@ -98,7 +99,7 @@ export default function CardPreview({ username, setStats }) {
             onClick={handleCopy}
             text="Copy To Clipboard"
             speed={3}
-            className="  font-bold text-gray-800 mb-6 text-center"
+            className="   cursor-target font-bold text-gray-800 mb-6 text-center"
           />
           
         </div>

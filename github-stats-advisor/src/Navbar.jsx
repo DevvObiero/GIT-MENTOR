@@ -42,10 +42,10 @@ setStars(data.stargazers_count);
 
       {/* Desktop Nav */}
       <ul className="hidden md:flex gap-8 list-none">
-        <li><Link className="hover:text-purple-500" to="/">Insights</Link></li>
-        <li><Link className="hover:text-purple-500" to="/">Achivements</Link></li>
-        <li><Link className="hover:text-purple-500" to="/Readme">Readme</Link></li>
-        <li><Link className="hover:text-purple-500" to="/about">About</Link></li>
+        <li><Link className=" cursor-target hover:text-purple-500" to="/">Insights</Link></li>
+         <li><Link className="hover:text-purple-500  cursor-target" to="/">Achivements</Link></li>
+        <li><Link className="hover:text-purple-500  cursor-target" to="/Readme">Readme</Link></li>
+         <li><Link className="hover:text-purple-500 cursor-target " to="/about">About</Link></li>
       </ul>
 
       {/* CTA Button */}
@@ -57,6 +57,7 @@ setStars(data.stargazers_count);
   rel="noopener noreferrer"
   color="#fff" // white glow
   speed="6s"
+  className='cursor-target'
 >
   ⭐ {stars !== null ? `${stars} stars` : "Loading..."}
 </StarBorder>

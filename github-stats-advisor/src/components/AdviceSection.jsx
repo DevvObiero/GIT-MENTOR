@@ -51,7 +51,7 @@ const AdviceSection = ({ username, stats }) => {
   disabled={loading || !stats}
   color="#fff"
   speed="6s"
-  className="cursor-pointer"
+  className="cursor-pointer cursor-target"
 >
   {loading ? 'Generating...' : 'Generate Advice'}
 </StarBorder>
