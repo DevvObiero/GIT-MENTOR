@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import ShinyText from './ShinyText';
+
 
 export default function CardPreview({ username, setStats }) {
   const [theme, setTheme] = useState('dark');
@@ -91,9 +93,14 @@ export default function CardPreview({ username, setStats }) {
         {error && <p className="text-red-500">{error}</p>}
         <img src={buildURL()} alt="GitHub stats preview" className="mx-auto w-full rounded-xl shadow-lg" />
         <div className="mt-4 text-center">
-          <button onClick={handleCopy} className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
-            Copy To Clipboard
-          </button>
+        
+          <ShinyText
+            onClick={handleCopy}
+            text="Copy To Clipboard"
+            speed={3}
+            className="  font-bold text-gray-800 mb-6 text-center"
+          />
+          
         </div>
         {copied && <p className="text-green-500 font-medium mt-2">Copied to clipboard</p>}
       </div>
