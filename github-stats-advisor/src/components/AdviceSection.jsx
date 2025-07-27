@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import StarBorder from "./StartBorder"; 
 
 const AdviceSection = ({ username, stats }) => {
   const [rankInfo, setRankInfo] = useState(null);
@@ -33,7 +34,7 @@ const AdviceSection = ({ username, stats }) => {
 
   return (
     <div className="p-4 rounded-2xl shadow-md mx-auto mt-10 text-center">
-      <h2 className="text-2xl font-semibold mb-4">GitHub Profile Advice</h2>
+      {/* <h2 className="text-2xl font-semibold mb-4">GitHub Profile Advice</h2> */}
       
       {/* Show stats summary for debugging */}
       {stats && (
@@ -42,14 +43,19 @@ const AdviceSection = ({ username, stats }) => {
         </div>
       )}
       
-      <button
-        onClick={handleGenerateAdvice}
-        className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 disabled:opacity-50"
-        disabled={loading || !stats}
-      >
-        {loading ? 'Generating...' : 'Generate Advice'}
-      </button>
-      
+     
+
+<StarBorder
+  as="a"
+  onClick={handleGenerateAdvice}
+  disabled={loading || !stats}
+  color="#fff"
+  speed="6s"
+  className="cursor-pointer"
+>
+  {loading ? 'Generating...' : 'Generate Advice'}
+</StarBorder>
+
       {error && <p className="mt-4 text-red-500">{error}</p>}
       
       {rankInfo && (
