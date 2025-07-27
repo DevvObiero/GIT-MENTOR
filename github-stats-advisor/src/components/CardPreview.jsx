@@ -7,8 +7,6 @@ export default function CardPreview({ username, setStats }) {
   const [theme, setTheme] = useState('dark');
   const [showPrivate, setShowPrivate] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     async function fetchStats() {
