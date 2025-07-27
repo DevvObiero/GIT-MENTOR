@@ -7,7 +7,7 @@ export default function Footer() {
         © 2025 github-stats-generator · Built with{" "}
         <span className="text-purple-500">💜</span> by{" "}
         <a
-          href="https://your-portfolio-link.com" // replace with your actual portfolio URL
+          href="https://paulobiero.netlify.app" // replace with your actual portfolio URL
           target="_blank"
           rel="noopener noreferrer"
           className="text-purple-600 font-medium hover:underline"
