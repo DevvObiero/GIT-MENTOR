@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import ShinyText from './ShinyText';
 
-
 export default function CardPreview({ username, setStats }) {
   const [theme, setTheme] = useState('dark');
   const [showPrivate, setShowPrivate] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     async function fetchStats() {
@@ -18,11 +19,10 @@ export default function CardPreview({ username, setStats }) {
       
       setLoading(true);
       setError('');
-     
 
       try {
         // Use your backend proxy to get the exact same stats as the image
-      const response = await axios.get(`https://git-mentor-production.up.railway.app/api/stats/${username}`, {
+        const response = await axios.get(`https://git-mentor-production.up.railway.app/api/stats/${username}`, {
           params: {
             theme: theme,
             count_private: showPrivate.toString()
@@ -89,18 +89,16 @@ export default function CardPreview({ username, setStats }) {
         </label>
       </div>
       <div className="w-full max-w-md px-4 relative">
-        {/* {loading && <p className="text-blue-500">Loading stats...</p>} */}
-        {/* {error && <p className="text-red-500">{error}</p>} */}
+        {loading && <p className="text-blue-500">Loading stats...</p>}
+        {error && <p className="text-red-500">{error}</p>}
         <img src={buildURL()} alt="GitHub stats preview" className="mx-auto w-full rounded-xl shadow-lg" />
         <div className="mt-4 text-center">
-        
           <ShinyText
             onClick={handleCopy}
             text="Copy To Clipboard"
             speed={3}
-            className="   cursor-target font-bold text-gray-800 mb-6 text-center"
+            className="cursor-target font-bold text-gray-800 mb-6 text-center"
           />
-          
         </div>
         {copied && <p className="text-green-500 font-medium mt-2">Copied to clipboard</p>}
       </div>

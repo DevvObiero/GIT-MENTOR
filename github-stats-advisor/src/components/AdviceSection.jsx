@@ -44,8 +44,17 @@ const AdviceSection = ({ username, stats }) => {
       )}
       
      
-
-<StarBorder
+      {/* <button
+      
+        onClick={handleGenerateAdvice}
+        className={`px-6 py-2 rounded-full bg-purple-600 text-white font-semibold hover:bg-purple-700 transition-colors duration-200 ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
+        disabled={loading}  
+      >
+      advice
+        {loading ? 'Generating...' : 'Generate Advice'}
+</button> */}
+      
+      <StarBorder
   as="a"
   onClick={handleGenerateAdvice}
   disabled={loading || !stats}
@@ -55,6 +64,9 @@ const AdviceSection = ({ username, stats }) => {
 >
   {loading ? 'Generating...' : 'Generate Advice'}
 </StarBorder>
+
+
+      
 
       {error && <p className="mt-4 text-red-500">{error}</p>}
       
