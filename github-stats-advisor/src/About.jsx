@@ -14,13 +14,10 @@ const About = () => {
   className="text-2xl sm:text-4xl font-bold text-gray-800 mb-6 text-center"
 />
 
-      
-             <div>
-      <TargetCursor 
-        hideDefaultCursor={true}
-      />
-      
-    </div>
+      <div className="hidden md:block">
+  <TargetCursor hideDefaultCursor={true} />
+</div>
+
       <p className="text-base sm:text-lg text-gray-700 mb-6 leading-relaxed text-center sm:text-left">
         GitHub Stats Advisor is a tool that helps developers not just see their GitHub activity — but understand it.
         It analyzes your public profile and gives you personalized advice on how to grow as a developer.

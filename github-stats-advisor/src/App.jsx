@@ -26,12 +26,10 @@ function Home() {
   return (
     <>
       <div className="h-[400px] mt-9 relative">
-             <div>
-      <TargetCursor 
-        hideDefaultCursor={true}
-      />
-      
-    </div>
+       <div className="hidden md:block">
+  <TargetCursor hideDefaultCursor={true} />
+</div>
+
         <Squares speed={0.001} squareSize={40} direction="down" borderColor="#fff" hoverFillColor="#4c51bf" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 pointer-events-none">
           <ShinyText

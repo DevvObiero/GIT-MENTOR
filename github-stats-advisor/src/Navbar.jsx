@@ -34,11 +34,14 @@ setStars(data.stargazers_count);
     smaller 
       flex items-center justify-between bg-transparent text-white relative">
       {/* Logo and Title */}
-     <div className="flex name items-center">
-  <img src="/logo.svg" alt="LOGO" className="h-18 w-auto sm:h-7 md:h-8 mr-2 logo" />
-  <span className="font-bold smaller  text-base sm:text-lg md:text-xl">GIT MENTOR</span>
-</div>
-
+   <Link to="/">
+  <div className="flex name items-center cursor-pointer">
+    <img src="/logo.svg" alt="LOGO" className="h-18 w-auto sm:h-7 md:h-8 mr-2 logo" />
+    <span className="font-bold smaller text-base sm:text-lg md:text-xl">
+      GIT MENTOR
+    </span>
+  </div>
+</Link>
 
       {/* Desktop Nav */}
       <ul className="hidden md:flex gap-8 list-none">
@@ -80,6 +83,7 @@ setStars(data.stargazers_count);
         <ul className="flex flex-col gap-6 mt-20 text-lg">
           <li><Link onClick={() => setIsOpen(false)} to="/">Stats</Link></li>
           <li><Link onClick={() => setIsOpen(false)} to="/">Insights</Link></li>
+          <li><Link onClick={() => setIsOpen(false)} to="/Readme">Readme</Link></li>
           <li><Link onClick={() => setIsOpen(false)} to="/about">About</Link></li>
         </ul>
         <div className='mt-4' >

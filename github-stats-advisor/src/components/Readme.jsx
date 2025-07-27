@@ -1,21 +1,23 @@
 import TargetCursor from './TargetCursor';
+import ShinyText from './ShinyText';
+
+
 
 export default function Readme() {
   return (
     <div className="text-white px-6 py-10 space-y-10 relative z-10">
-       <div>
-      <TargetCursor 
-        hideDefaultCursor={true}
-      />
+      <div className="hidden md:block">
+  <TargetCursor hideDefaultCursor={true} />
+</div>
+
+
+          <section className="space-y-6 max-w-4xl mx-auto">
+                  <ShinyText
+  text="How to Write an Impressive GitHub README"
+  speed={3}
+  className="text-2xl sm:text-4xl font-bold text-gray-800 mb-6 text-center"
+/>
       
-      <h1>Hover over the elements below</h1>
-      <button className="cursor-target">Click me!</button>
-      <div className="cursor-target">Hover target</div>
-    </div>
-
-      <section className="space-y-6 max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold">📘 How to Write an Impressive GitHub README</h1>
-
         <p>
           Your GitHub README is like your <strong>digital handshake</strong> — it tells people who you are,
           what you’re working on, and why they should care. Here’s how to make yours stand out.
