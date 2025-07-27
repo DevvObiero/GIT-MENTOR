@@ -139,8 +139,14 @@ app.get('/api/stats/:username', async (req, res) => {
 });
 
 app.post('/api/analyze', async (req, res) => {
+  console.log('🔍 Received body:', req.body); // <- ADD THIS
   const { username, stats } = req.body;
-  if (!username || !stats) return res.status(400).json({ error: 'Username and stats required' });
+
+  if (!username || !stats) {
+    console.log('❌ Missing username or stats'); // <- ADD THIS
+    return res.status(400).json({ error: 'Username and stats required' });
+  }
+
 
   // Extract all stats including reviews
   const { totalStars, totalCommits, totalPRs, totalIssues, followers, contributedTo, reviews } = stats;
