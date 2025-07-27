@@ -189,5 +189,8 @@ Give 3 actionable tips to improve my GitHub profile. Make sure to mention all th
     res.status(500).json({ error: 'Failed to generate advice.' });
   }
 });
+app.get("/", (req, res) => {
+  res.send("✅ GitMentor backend is live!");
+});
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
