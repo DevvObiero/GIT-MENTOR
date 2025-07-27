@@ -10,7 +10,7 @@ import About from './About';
 import Readme from './components/Readme'; 
 import './App.css';
 import TargetCursor from './components/TargetCursor';
-
+import Footer from './components/Footer';
 
 function Home() {
   const [username, setUsername] = useState('');
@@ -70,6 +70,7 @@ function Home() {
       <div className="mt-15 px-4 text-center">
         <CardPreview username={username} setStats={setStats} />
         <AdviceSection username={username} stats={stats} />
+         <Footer />
       </div>
     </>
   );
