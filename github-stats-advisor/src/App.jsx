@@ -3,9 +3,6 @@ import { useState } from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import CardPreview from './components/CardPreview';
 import AdviceSection from './components/AdviceSection';
-
-
-
 import Squares from './Squares';
 import ShinyText from './components/ShinyText';
 import Navbar from './Navbar';
@@ -14,33 +11,25 @@ import './App.css';
 
 function Home() {
   const [username, setUsername] = useState('');
+  const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = () => {
     if (!username) return;
     setLoading(true);
-    setTimeout(() => setLoading(false), 1000); // Optional delay effect
+    setTimeout(() => setLoading(false), 1000);
   };
 
   return (
     <>
-      {/* Hero Section */}
       <div className="h-[400px] mt-9 relative">
-        <Squares 
-          speed={0.001} 
-          squareSize={40}
-          direction="down"
-          borderColor="#fff"
-          hoverFillColor="#4c51bf"
-        />
-
+        <Squares speed={0.001} squareSize={40} direction="down" borderColor="#fff" hoverFillColor="#4c51bf" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 pointer-events-none">
           <ShinyText
             text="Get Personalized GitHub Growth Advice"
             speed={4}
             className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4"
           />
-
           <div className="flex items-center gap-2 w-full justify-center pointer-events-auto">
             <input
               type="text"
@@ -50,7 +39,6 @@ function Home() {
               className="px-4 py-2 rounded-md text-black bg-white max-w-sm w-full text-center"
               style={{ fontFamily: 'Born2bSporty' }}
             />
-
             {username.trim() && (
               <button
                 onClick={handleSubmit}
@@ -60,23 +48,18 @@ function Home() {
               </button>
             )}
           </div>
-
           <div className="h-6 mt-4">
             {loading && <span className="loader block mx-auto"></span>}
           </div>
         </div>
       </div>
-
-      {/* GitHub Card Preview Section */}
       <div className="mt-15 px-4 text-center">
-       <CardPreview username={username} />
-<AdviceSection username={username} /> {/* ✅ Pass username */}
-
+        <CardPreview username={username} setStats={setStats} />
+        <AdviceSection username={username} stats={stats} />
       </div>
     </>
   );
 }
-
 
 function App() {
   return (
