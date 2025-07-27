@@ -7,6 +7,7 @@ import Squares from './Squares';
 import ShinyText from './components/ShinyText';
 import Navbar from './Navbar';
 import About from './About';
+import Readme from './components/Readme'; 
 import './App.css';
 
 function Home() {
@@ -74,6 +75,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/readme" element={<Readme />} />
       </Routes>
     </>
   );

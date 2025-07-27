@@ -32,7 +32,7 @@ setStars(data.stargazers_count);
   return (
     <header className="mt-2  
     smaller 
-      flex items-center justify-between bg-black text-white relative">
+      flex items-center justify-between bg-transparent text-white relative">
       {/* Logo and Title */}
      <div className="flex name items-center">
   <img src="/logo.svg" alt="LOGO" className="h-18 w-auto sm:h-7 md:h-8 mr-2 logo" />
@@ -44,7 +44,7 @@ setStars(data.stargazers_count);
       <ul className="hidden md:flex gap-8 list-none">
         <li><Link className="hover:text-purple-500" to="/">Insights</Link></li>
         <li><Link className="hover:text-purple-500" to="/">Achivements</Link></li>
-        <li><Link className="hover:text-purple-500" to="/">Readme</Link></li>
+        <li><Link className="hover:text-purple-500" to="/Readme">Readme</Link></li>
         <li><Link className="hover:text-purple-500" to="/about">About</Link></li>
       </ul>
 
