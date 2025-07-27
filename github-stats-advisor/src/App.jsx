@@ -30,24 +30,30 @@ function Home() {
             speed={4}
             className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-4"
           />
-          <div className="flex items-center gap-2 w-full justify-center pointer-events-auto">
-            <input
-              type="text"
-              placeholder="Enter GitHub username"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              className="px-4 py-2 rounded-md text-black bg-white max-w-sm w-full text-center"
-              style={{ fontFamily: 'Born2bSporty' }}
-            />
-            {username.trim() && (
-              <button
-                onClick={handleSubmit}
-                className="bg-gray-600 hover:bg-purple-700 text-white p-2 rounded-md transition duration-300"
-              >
-                <FaArrowRight />
-              </button>
-            )}
-          </div>
+        <form
+  onSubmit={(e) => {
+    e.preventDefault();
+    handleSubmit();
+  }}
+  className="flex items-center gap-2 w-full justify-center pointer-events-auto"
+>
+  <input
+    type="text"
+    placeholder="Enter GitHub username"
+    value={username}
+    onChange={(e) => setUsername(e.target.value)}
+    className="px-4 py-2 rounded-md text-black bg-white max-w-sm w-full text-center"
+    style={{ fontFamily: 'Born2bSporty' }}
+  />
+  {username.trim() && (
+    <button
+      type="submit"
+      className="bg-gray-600 hover:bg-purple-700 text-white p-2 rounded-md transition duration-300"
+    >
+      <FaArrowRight />
+    </button>
+  )}
+</form>
           <div className="h-6 mt-4">
             {loading && <span className="loader block mx-auto"></span>}
           </div>
