@@ -1,5 +1,6 @@
 import TargetCursor from './TargetCursor';
 import ShinyText from './ShinyText';
+import Footer from './Footer';
 
 
 
@@ -95,12 +96,15 @@ export default function Readme() {
 
        
 
-        <h2 className="text-xl font-semibold mt-6">💡 Final Word: Consistency &gt; Talent</h2>
+        <h2 className="text-xl font-semibold mt-6"> Final Word: Consistency &gt; Talent</h2>
         <p>
           Great developers aren’t born — they’re made through daily effort. Push your code, improve
           your skills, and stay curious. The green dots don’t lie: <strong>consistency is the real flex</strong>.
         </p>
       </section>
+         <Footer />
+
     </div>
+
   );
 }

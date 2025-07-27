@@ -2,6 +2,7 @@ import React from 'react';
 import ShinyText from './components/ShinyText';
 import TechCarousel from './components/TechCarousel';
 import TargetCursor from './components/TargetCursor';
+import Footer from './components/Footer';
 
 
 
@@ -116,7 +117,10 @@ const About = () => {
         >
           Visit My Portfolio
         </a>
+        
       </div>
+                 <Footer />
+
     </div>
   );
 };
