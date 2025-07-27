@@ -22,7 +22,7 @@ const AdviceSection = ({ username, stats }) => {
     setLoading(true);
     setError('');
     try {
-      const response = await axios.post('http://localhost:5000/api/analyze', { username, stats });
+     const response = await axios.post('https://git-mentor.onrender.com/api/analyze', { username, stats });
       setRankInfo(response.data);
     } catch (err) {
       setError('Failed to generate advice.');

@@ -21,7 +21,7 @@ export default function CardPreview({ username, setStats }) {
       
       try {
         // Use your backend proxy to get the exact same stats as the image
-        const response = await axios.get(`http://localhost:5000/api/stats/${username}`, {
+      const response = await axios.get(`https://git-mentor.onrender.com/api/stats/${username}`, {
           params: {
             theme: theme,
             count_private: showPrivate.toString()
