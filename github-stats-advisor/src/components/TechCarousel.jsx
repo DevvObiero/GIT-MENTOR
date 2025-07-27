@@ -5,6 +5,8 @@ const frontendIcons = [
   'bxl-react',
   'bxl-tailwind-css',
   'bxl-figma',
+  'bxl-nodejs',
+  'bxl-express-js',
 ];
 
 const TechCarousel = () => {
