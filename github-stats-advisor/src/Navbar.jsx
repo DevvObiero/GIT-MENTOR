@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import StarBorder from "./components/StartBorder"; 
-
 // ct
 // Install Lucide icons or replace with SVGs
 
@@ -46,7 +45,6 @@ setStars(data.stargazers_count);
       {/* Desktop Nav */}
       <ul className="hidden md:flex gap-8 list-none">
         <li><Link className=" cursor-target hover:text-purple-500" to="/">Insights</Link></li>
-         <li><Link className="hover:text-purple-500  cursor-target" to="/">Achivements</Link></li>
         <li><Link className="hover:text-purple-500  cursor-target" to="/Readme">Readme</Link></li>
          <li><Link className="hover:text-purple-500 cursor-target " to="/about">About</Link></li>
       </ul>
@@ -82,7 +80,6 @@ setStars(data.stargazers_count);
       >
         <ul className="flex flex-col gap-6 mt-20 text-lg">
           <li><Link onClick={() => setIsOpen(false)} to="/">Stats</Link></li>
-          <li><Link onClick={() => setIsOpen(false)} to="/">Insights</Link></li>
           <li><Link onClick={() => setIsOpen(false)} to="/Readme">Readme</Link></li>
           <li><Link onClick={() => setIsOpen(false)} to="/about">About</Link></li>
         </ul>

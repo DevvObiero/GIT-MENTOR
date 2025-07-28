@@ -19,12 +19,10 @@ export default function Readme() {
                   <ShinyText
   text="How to Write an Impressive GitHub README"
   speed={3}
-  className="text-2xl sm:text-4xl font-bold text-gray-800 mb-6 text-center"
+  className="text-2xl  sm:text-4xl font-bold text-gray-800 mb-6 text-center"
 />
-      
         
-        
-        <p>
+        <p  className='pb-6'>
           Your GitHub README is like your <strong>digital handshake</strong> — it tells people who you are,
           what you’re working on, and why they should care. Here’s how to make yours stand out.
         </p>
@@ -127,6 +125,54 @@ export default function Readme() {
   />
 </a>
         </p>
+<ShinyText
+  text="Earn GitHub Achievement Badges"
+  speed={3}
+  className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center"
+/>
+
+<p className="text-gray-700 mb-4 text-center">
+  GitHub has hidden achievement badges like <strong>Quickdraw</strong>, <strong>Pair Extraordinaire</strong>, and <strong>Pull Shark</strong> that appear on your profile when you complete certain activities.
+</p>
+
+<div className="flex justify-center gap-4 flex-wrap mb-6">
+  <img
+    src="https://github.githubassets.com/images/modules/profile/achievements/quickdraw-default.png"
+    alt="Quickdraw Badge"
+    className="h-16"
+  />
+  <img
+    src="https://github.githubassets.com/images/modules/profile/achievements/pair-extraordinaire-default.png"
+    alt="Pair Extraordinaire Badge"
+    className="h-16"
+  />
+  <img
+    src="https://githubachievements.com/cdn-cgi/image/width=128/images/badges/PullShark.png"
+    alt="Pull Shark Badge"
+    className="h-16"
+  />
+</div>
+
+<p className="text-gray-700 mb-4 text-center">
+  To earn these, contribute to open source, review pull requests, or open issues consistently.
+  They're fun little rewards that show you're active in the dev community!
+</p>
+
+<p className="text-center">
+
+      <a
+  href="https://githubachievements.com/"
+  target="_blank"
+            rel="noreferrer"
+            className="cursor-target"
+>
+  <ShinyText
+    text="Grind and get Gitub badges"
+    speed={3}
+    className="font-bold text-gray-800 mb-6 text-center "
+  />
+</a>
+</p>
 
         <h2 className="text-xl font-semibold mt-6"> Final Word: Consistency &gt; Talent</h2>
         <p>
