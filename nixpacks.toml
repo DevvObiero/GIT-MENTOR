@@ -1,0 +1,16 @@
+[phases.setup]
+nixPkgs = ["nodejs"]
+
+[phases.install]
+cmds = [
+  "cd github-stats-advisor && npm install",
+  "cd server && npm install"
+]
+
+[phases.build]
+cmds = [
+  "cd github-stats-advisor && npm run build"
+]
+
+[start]
+cmd = "node server/index.js"
