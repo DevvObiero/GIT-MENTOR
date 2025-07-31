@@ -52,10 +52,9 @@ This isn’t just another GitHub widget — it gives you **real advice**, like:
 
 ---
 
-## 📸 Demo
+## 📸 IMAGE
 
-Coming soon!  
-*(Let me cook…🔥)*
+<img width="934" height="445" alt="Screenshot 2025-07-19 214914" src="https://github.com/user-attachments/assets/f4d78c3c-21fb-404f-bee5-88deea2f07e1" />
 
 ---
 
