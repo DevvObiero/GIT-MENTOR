@@ -3,12 +3,18 @@ import { getReports, deleteReport } from '../utils/reportStorage';
 import { exportAllReports, getStorageStats } from '../utils/exportUtils';
 import { FaDownload, FaTrash, FaChartBar, FaEye } from 'react-icons/fa';
 import ShinyText from './ShinyText';
+import TargetCursor from './TargetCursor';
+import "./StarBorder.css";
+import StarBorder from "./StartBorder"; 
+
+
 
 
 const ReportsManager = () => {
   const [reports, setReports] = useState([]);
   const [stats, setStats] = useState(null);
   const [viewingReport, setViewingReport] = useState(null);
+  
 
   useEffect(() => {
     loadData();
@@ -34,62 +40,54 @@ const ReportsManager = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white p-6">
+    <div className="min-h-screen mt-8 bg-black text-white p-6">
       <div className="max-w-4xl mx-auto">
     
-        
+         <div className="hidden md:block">
+  <TargetCursor hideDefaultCursor={true} />
+</div>
+
          <ShinyText
   text="REPORTS MANAGER"
   speed={3}
   className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 text-center"
 />
         {stats && (
-          <div className="bg-white/10 backdrop-blur-md p-4 rounded-lg mb-6">
+          <div className="  p-4 rounded-lg mb-6">
             <h2 className="text-xl font-semibold mb-3 flex items-center gap-2">
-              <FaChartBar /> Storage Statistics
+              {/* <FaChartBar /> Storage Statistics */}
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
               <div>
-                <p className="text-2xl font-bold text-blue-400">{stats.totalReports}</p>
                 
-                <p className="text-sm text-white/70">Total Reports</p>
+                <p className="text-2xl font-bold text-blue-400">{stats.totalReports}</p>
+
+                <p className="text-sm ">Total Reports</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-green-400">{stats.uniqueUsers}</p>
-                <p className="text-sm text-white/70">Unique Users</p>
+                <p className="text-2xl font-bold text-purple-600">{stats.uniqueUsers}</p>
+                <p className="text-sm ">Unique Users</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-yellow-400">{Math.round(stats.storageSize / 1024)}KB</p>
-                <p className="text-sm text-white/70">Storage Used</p>
+                <p className="text-2xl font-bold text-purple-600">{Math.round(stats.storageSize / 1024)}KB</p>
+                <p className="text-sm ">Storage Used</p>
               </div>
               <div>
-                <p className="text-2xl font-bold text-purple-400">
+                <p className="text-2xl font-bold text-blue-400">
                   {reports.length > 0
                     ? Math.round((Date.now() - new Date(reports[0].timestamp).getTime()) / (1000 * 60 * 60 * 24))
                     : 0}
                 </p>
-                <p className="text-sm text-white/70">Days Since Last</p>
+                <p className="text-sm ">Days Since Last</p>
               </div>
             </div>
           </div>
         )}
 
-        <div className="flex gap-4 mb-6">
-          <button
-            onClick={exportAllReports}
-            className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded flex items-center gap-2 transition"
-          >
-            <FaDownload /> Export All Reports
-          </button>
-          <button
-            onClick={handleDeleteAll}
-            className="bg-red-600 hover:bg-red-700 px-4 py-2 rounded flex items-center gap-2 transition"
-          >
-            <FaTrash /> Clear All Reports
-          </button>
-        </div>
+    
 
-        <div className="bg-white/10 backdrop-blur-md rounded-lg overflow-hidden">
+
+        <div className=" rounded-lg overflow-hidden">
           <h2 className="text-xl font-semibold p-4 border-b border-white/20">All Saved Reports</h2>
           {reports.length === 0 ? (
             <p className="p-4 text-white/70">No reports saved yet.</p>
@@ -98,7 +96,7 @@ const ReportsManager = () => {
               {reports.map((report) => (
                 <div key={report.id} className="p-4 flex items-center justify-between">
                   <div>
-                    <p className="font-medium">{report.username}</p>
+                    <p className="font-medium flex-start flex">{report.username}</p>
                     <p className="text-sm text-white/70">
                       {report.rank} - Top {report.percentile}% | {new Date(report.timestamp).toLocaleString()}
                     </p>
@@ -106,14 +104,14 @@ const ReportsManager = () => {
                   <div className="flex gap-2">
                     <button
                       onClick={() => setViewingReport(report)}
-                      className="bg-purple-600 hover:bg-purple-700 p-2 rounded transition"
+                      className="bg-black cursor-target hover:bg-purple-700 p-2 rounded transition"
                       title="View Report"
                     >
                       <FaEye size={14} />
                     </button>
                     <button
                       onClick={() => handleDelete(report.id)}
-                      className="bg-red-600 hover:bg-red-700 p-2 rounded transition"
+                      className="bg-black cursor-target hover:bg-red-700 p-2 rounded transition"
                       title="Delete Report"
                     >
                       <FaTrash size={14} />
@@ -124,8 +122,41 @@ const ReportsManager = () => {
             </div>
           )}
         </div>
+        
       </div>
+      <div className="flex flex-wrap  mt-5 sm:flex-nowrap gap-4 mb-6 justify-center items-center text-center">
+        
 
+
+ <StarBorder
+    onClick={exportAllReports}          
+  target="_blank"
+  rel="noopener noreferrer"
+  color="#fff" // white glow
+          speed="6s"
+          className="cursor-target px-4 py-2 rounded flex items-center gap-2 transition"
+        >
+  <FaDownload /> 
+</StarBorder>
+
+
+
+<StarBorder
+    onClick={handleDeleteAll}
+          
+  color="#fff" // white glow
+          speed="6s"
+          className="cursor-target px-4 py-2 rounded flex items-center gap-2 transition"
+        >
+  <FaTrash /> 
+</StarBorder>
+
+
+
+ 
+</div>
+
+      
       {/* Report Viewer Modal */}
       {viewingReport && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
@@ -166,8 +197,14 @@ const ReportsManager = () => {
           </div>
         </div>
       )}
+
+      
     </div>
+
+    
   );
+
+  
 };
 
 export default ReportsManager;
