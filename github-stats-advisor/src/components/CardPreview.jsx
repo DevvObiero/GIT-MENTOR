@@ -109,7 +109,7 @@ export default function CardPreview({ username, setStats }) {
       </div>
       <div className="w-full max-w-md px-4 relative">
         {loading && <p className="text-blue-500">Loading stats...</p>}
-        {error && <p className="text-red-500">{error}</p>}
+        {/* {error && <p className="text-red-500 text-1xl">{error}</p>} */}
         <img src={buildURL()} alt="GitHub stats preview" className="mx-auto w-full rounded-xl shadow-lg" />
         <div className="mt-4 text-center">
           <ShinyText

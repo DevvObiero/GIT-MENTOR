@@ -1,25 +1,22 @@
-
-
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 1rem;
   text-align: center;
-  min-height: 100vh;
-  background-color: black;
+  
 }
+
 
 .logo {
   height: 53px !important; /* or any desired size */
   width: auto;
 }
 
-html {
+html{
   background-color: black;
-  color: white;
+  color:white;
   font-family: 'Joystix Monospace', monospace;
   font-size: 16px;
-  min-height: 100vh;
 }
 
 
@@ -148,3 +145,6 @@ html {
 .glow:hover {
   color: white;
 }
+
+
+

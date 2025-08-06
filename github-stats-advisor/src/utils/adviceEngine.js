@@ -104,30 +104,41 @@ export const generateAdvice = (username, rawStats) => {
   // neededPoints already calculated above
   
   // Comprehensive analysis
-  let advice = `═══════════════════════════════════════════════════════════════\n`;
+  let advice = `════════════════════════════════\n`;
   advice += `🚀 GITHUB PROFILE ANALYSIS FOR ${username.toUpperCase()}\n`;
-  advice += `═══════════════════════════════════════════════════════════════\n\n`;
+  advice += `════════════════════════════════\n\n`;
   
   advice += `📊 CURRENT STANDING:\n`;
+
   advice += `• Rank: ${rank} (${description})\n`;
   advice += `• Percentile: Top ${percentile}% of developers\n`;
   advice += `• Percentile Score: ${Math.round(percentile)}%\n`;
   advice += `• Next Target: ${nextLevel} (${Math.abs(Math.ceil(neededPoints))} percentile points to improve)\n\n`;
   
-  advice += `📈 DETAILED METRICS BREAKDOWN:\n`;
-  advice += `┌─────────────────────┬─────────┬──────────┬─────────────┐\n`;
-  advice += `│ Metric              │ Current │ Target   │ Impact      │\n`;
-  advice += `├─────────────────────┼─────────┼──────────┼─────────────┤\n`;
-  advice += `│ Total Commits       │ ${totalCommits.toString().padEnd(7)} │ ${getTarget('commits', totalCommits).toString().padEnd(8)} │ ${getImpact('commits', totalCommits).padEnd(11)} │\n`;
-  advice += `│ Pull Requests       │ ${totalPRs.toString().padEnd(7)} │ ${getTarget('prs', totalPRs).toString().padEnd(8)} │ ${getImpact('prs', totalPRs).padEnd(11)} │\n`;
-  advice += `│ Issues Opened       │ ${totalIssues.toString().padEnd(7)} │ ${getTarget('issues', totalIssues).toString().padEnd(8)} │ ${getImpact('issues', totalIssues).padEnd(11)} │\n`;
-  advice += `│ Stars Earned        │ ${totalStars.toString().padEnd(7)} │ ${getTarget('stars', totalStars).toString().padEnd(8)} │ ${getImpact('stars', totalStars).padEnd(11)} │\n`;
-  advice += `│ Followers           │ ${followers.toString().padEnd(7)} │ ${getTarget('followers', followers).toString().padEnd(8)} │ ${getImpact('followers', followers).padEnd(11)} │\n`;
-  advice += `│ Repos Contributed   │ ${contributedTo.toString().padEnd(7)} │ ${getTarget('contributed', contributedTo).toString().padEnd(8)} │ ${getImpact('contributed', contributedTo).padEnd(11)} │\n`;
-  advice += `│ Code Reviews        │ ${reviews.toString().padEnd(7)} │ ${getTarget('reviews', reviews).toString().padEnd(8)} │ ${getImpact('reviews', reviews).padEnd(11)} │\n`;
-  advice += `└─────────────────────┴─────────┴──────────┴─────────────┘\n\n`;
+
+// Replace the ugly table with mobile-friendly metrics
+advice += `📈 DETAILED METRICS BREAKDOWN:\n\n`;
+
+const metrics = [
+  { name: 'Total Commits', current: totalCommits, type: 'commits' },
+  { name: 'Pull Requests', current: totalPRs, type: 'prs' },
+  { name: 'Issues Opened', current: totalIssues, type: 'issues' },
+  { name: 'Stars Earned', current: totalStars, type: 'stars' },
+  { name: 'Followers', current: followers, type: 'followers' },
+  { name: 'Repos Contributed', current: contributedTo, type: 'contributed' },
+  { name: 'Code Reviews', current: reviews, type: 'reviews' }
+];
+
+metrics.forEach(metric => {
+  const target = getTarget(metric.type, metric.current);
+  const impact = getImpact(metric.type, metric.current);
   
+  advice += `▶ ${metric.name}\n`;
+  advice += `  Current: ${metric.current} | Target: ${target} | Impact: ${impact}\n\n`;
+});
+
   advice += `📊 RANKING CALCULATION:\n`;
+
   advice += `• Commits: ${totalCommits} (median: 250)\n`;
   advice += `• Pull Requests: ${totalPRs} (median: 50)\n`;
   advice += `• Issues: ${totalIssues} (median: 25)\n`;
@@ -214,6 +225,7 @@ const getDetailedAdvice = (username, stats, rank, neededPoints) => {
   let advice = `🎯 PERSONALIZED GROWTH STRATEGY:\n\n`;
   
   advice += `📋 PROFILE ANALYSIS:\n`;
+
   advice += `${profile.context}\n`;
   if ((rank === 'C+' || rank === 'C') && profile.isExperienced) {
     advice += `\nIMPORTANT: Your ${rank} rank reflects GitHub's collaboration scoring, not coding skill.\n`;
@@ -324,10 +336,10 @@ const getDetailedAdvice = (username, stats, rank, neededPoints) => {
     advice += `• Engage actively with the developer community\n`;
   }
   
-  advice += `\n═══════════════════════════════════════════════════════════════\n`;
+  advice += `\n═══════════════════════════════\n`;
   advice += `🚀 NEXT MILESTONE: Reach ${rank === 'S' ? 'S+' : 'next level'} by earning ${Math.ceil(neededPoints)} more points!\n`;
   advice += `📅 Estimated Timeline: ${Math.ceil(neededPoints / 20)} weeks with consistent effort\n`;
-  advice += `═══════════════════════════════════════════════════════════════`;
+  advice += `═════════════════════════════════`;
   
   return advice;
 };

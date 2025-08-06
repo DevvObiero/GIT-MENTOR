@@ -178,7 +178,7 @@ ${rankInfo.advice}`;
   };
 
   return (
-    <div className="p-4 rounded-2xl shadow-md mx-auto mt-10 text-center">
+    <div className="p-2 rounded-2xl shadow-md mx-auto mt-10 text-center">
       {/* <h2 className="text-2xl font-semibold mb-4">GitHub Profile Advice</h2> */}
       
       {/* Show stats summary for debugging */}
@@ -213,23 +213,37 @@ ${rankInfo.advice}`;
               <p>Your rank: <strong>{rankInfo.rank}</strong> (Top {rankInfo.percentile}%).</p>
               <p>To reach <strong>{rankInfo.nextLevel}</strong>, you need ~<strong>{Math.ceil(rankInfo.neededPoints)}</strong> points.</p>
             </div>
-            <div className="flex gap-2">
-              <button
-                onClick={downloadReportPDF}
-                className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm"
-              >
-                PDF
-              </button>
-              <button
-                onClick={downloadReportTXT}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm"
-              >
-                TXT
-              </button>
-            </div>
+         
           </div>
           <hr className="my-4" />
           <p className="whitespace-pre-line">{rankInfo.advice}</p>
+             <div className="flex gap-2">
+           
+          
+      <StarBorder
+              as="a"
+                onClick={downloadReportPDF}
+              
+  color="#fff"
+  speed="6s"
+  className="cursor-target cursor-target"
+>
+  PDF
+</StarBorder>
+             
+      
+      <StarBorder
+              as="a"
+                onClick={downloadReportTXT}
+              
+  color="#fff"
+  speed="6s"
+  className="cursor-target cursor-target"
+>
+   TXT
+</StarBorder>
+
+            </div>
           {savedReportId && (
             <div className="mt-4 p-2 bg-green-900 rounded text-sm">
               <p className="text-green-400">✓ Report automatically saved to your collection</p>
