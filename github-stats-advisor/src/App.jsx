@@ -11,6 +11,7 @@ import Readme from './components/Readme';
 import './App.css';
 import TargetCursor from './components/TargetCursor';
 import Footer from './components/Footer';
+import ReportsManager from './components/ReportsManager';
 
 function Home() {
   const [username, setUsername] = useState('');
@@ -79,11 +80,13 @@ function Home() {
 function App() {
   return (
     <>
+      {/* <OfflineIndicator /> */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/readme" element={<Readme />} />
+        <Route path="/reports" element={<ReportsManager />} />
       </Routes>
     </>
   );
