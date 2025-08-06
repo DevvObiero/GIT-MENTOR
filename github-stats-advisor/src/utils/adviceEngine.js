@@ -79,18 +79,27 @@ export const generateAdvice = (username, rawStats) => {
   const { level: rank, percentile, nextLevel, nextThreshold, totalScore } = calculateRank(stats);
   const neededPoints = nextThreshold - percentile;
   
-  const rankDescriptions = {
-    'S+': 'Expert developer - Top 1% globally',
-    'S': 'Advanced developer - Highly skilled', 
-    'A+': 'Proficient developer - Above average',
-    'A': 'Competent developer - Good foundation',
-    'B+': 'Developing skills - Making progress',
-    'B': 'Beginner+ - Learning actively',
-    'C+': 'Novice - Building foundation',
-    'C': 'Beginner - Just starting out'
+  // Contextual rank descriptions based on actual stats
+  const getContextualDescription = (rank, stats) => {
+    const { totalCommits } = stats;
+    const isExperienced = totalCommits > 100;
+    
+    const baseDescriptions = {
+      'S': 'Advanced developer - Highly skilled',
+      'A+': 'Proficient developer - Above average', 
+      'A': 'Competent developer - Good foundation',
+      'A-': 'Solid developer - Building expertise',
+      'B+': 'Developing skills - Making progress',
+      'B': 'Active learner - Growing steadily',
+      'B-': 'Emerging developer - On the right track',
+      'C+': isExperienced ? 'Experienced coder - Focus on collaboration' : 'Building foundation - Good start',
+      'C': 'Beginning journey - Lots of potential'
+    };
+    
+    return baseDescriptions[rank] || 'GitHub Developer';
   };
   
-  const description = rankDescriptions[rank];
+  const description = getContextualDescription(rank, stats);
   
   // neededPoints already calculated above
   
@@ -103,7 +112,7 @@ export const generateAdvice = (username, rawStats) => {
   advice += `• Rank: ${rank} (${description})\n`;
   advice += `• Percentile: Top ${percentile}% of developers\n`;
   advice += `• Percentile Score: ${Math.round(percentile)}%\n`;
-  advice += `• Next Target: ${nextLevel} (${Math.ceil(neededPoints)} points needed)\n\n`;
+  advice += `• Next Target: ${nextLevel} (${Math.abs(Math.ceil(neededPoints))} percentile points to improve)\n\n`;
   
   advice += `📈 DETAILED METRICS BREAKDOWN:\n`;
   advice += `┌─────────────────────┬─────────┬──────────┬─────────────┐\n`;
@@ -206,10 +215,14 @@ const getDetailedAdvice = (username, stats, rank, neededPoints) => {
   
   advice += `📋 PROFILE ANALYSIS:\n`;
   advice += `${profile.context}\n`;
-  if (rank === 'C+' && profile.isExperienced) {
-    advice += `Note: Your C+ rank reflects GitHub's collaboration metrics, not your coding ability.\n`;
-    advice += `With ${totalCommits} commits, you clearly have development experience.\n`;
+  if ((rank === 'C+' || rank === 'C') && profile.isExperienced) {
+    advice += `\nIMPORTANT: Your ${rank} rank reflects GitHub's collaboration scoring, not coding skill.\n`;
+    advice += `With ${totalCommits} commits, you're clearly an experienced developer.\n`;
+    advice += `Focus on open source contributions and community engagement to improve your rank.\n`;
+  } else if (rank === 'C+' && totalCommits > 50) {
+    advice += `\nYour C+ rank shows room for growth in GitHub collaboration and visibility.\n`;
   }
+  advice += `\n`;
   advice += `\n`;
   
   // Priority analysis
