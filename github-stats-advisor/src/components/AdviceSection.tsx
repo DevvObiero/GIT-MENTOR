@@ -3,10 +3,34 @@ import StarBorder from "./StartBorder";
 import { generateAdvice } from '../utils/adviceEngine';
 // import { saveReport, getReportsByUsername, downloadReportAsJSON, downloadReportAsText } from '../utils/reportStorage';
 // import { FaFileAlt, FaFileCode } from 'react-icons/fa';
-// import SavedReports from './SavedReports'; 
+// import SavedReports from './SavedReports';
 
-const AdviceSection = ({ username, stats }) => {
-  const [rankInfo, setRankInfo] = useState(null);
+interface Stats{
+  totalCommits: number;
+  totalPRs: number;
+  totalStars: number;
+  totalIssues: number;
+  followers: number;
+  contributedTo: number;
+} 
+
+interface RankInfo { 
+  rank: string;
+  percentile: number;
+  nextLevel: string|null;
+  neededPoints: number;
+  advice: string;
+
+}
+
+interface AdviceSectionProps { 
+  username: string; 
+  stats: Stats | null;
+}
+
+
+const AdviceSection:React.FC<AdviceSectionProps> = ({ username, stats }) => {
+  const [rankInfo, setRankInfo] = useState<RankInfo | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [lastUsername, setLastUsername] = useState('');
@@ -23,7 +47,7 @@ const AdviceSection = ({ username, stats }) => {
     const lineHeight = 6;
     
     // Clean text function to remove problematic characters
-    const cleanText = (text) => {
+    const cleanText = (text:string) => {
       return text
         .replace(/═/g, '-')
         .replace(/🎯|📊|📈|🔥|📋|🔄|🤝|⭐|👥|🏆|💡/g, '')
@@ -33,13 +57,13 @@ const AdviceSection = ({ username, stats }) => {
     };
     
     // Helper function to add text with page breaks
-    const addText = (text, fontSize = 10, isBold = false) => {
+    const addText = (text:string, fontSize = 10, isBold = false) => {
       const cleanedText = cleanText(text);
       if (!cleanedText) return;
       
       doc.setFontSize(fontSize);
-      if (isBold) doc.setFont(undefined, 'bold');
-      else doc.setFont(undefined, 'normal');
+      if (isBold) doc.setFont('helvetica', 'bold');
+      else doc.setFont('helvetica', 'normal');
       
       const lines = doc.splitTextToSize(cleanedText, 170);
       
@@ -99,7 +123,7 @@ const AdviceSection = ({ username, stats }) => {
     });
     
     // Footer
-    const totalPages = doc.internal.getNumberOfPages();
+    const totalPages = doc.getNumberOfPages();
     for (let i = 1; i <= totalPages; i++) {
       doc.setPage(i);
       doc.setFontSize(8);
@@ -127,7 +151,7 @@ ${rankInfo.advice}`;
     link.click();
     URL.revokeObjectURL(url);
   };
-  const [savedReportId, setSavedReportId] = useState(null);
+  const [savedReportId, setSavedReportId] = useState<string|null>(null);
 
   const handleGenerateAdvice = async () => {
     if (!username || !stats) {
