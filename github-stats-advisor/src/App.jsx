@@ -6,11 +6,11 @@ import AdviceSection from './components/AdviceSection';
 import Squares from './Squares';
 import ShinyText from './components/ShinyText';
 import Navbar from './Navbar';
+import Footer from './components/Footer';
 import About from './About';
 import Readme from './components/Readme'; 
 import './App.css';
 import TargetCursor from './components/TargetCursor';
-import Footer from './components/Footer';
 import ReportsManager from './components/ReportsManager';
 
 function Home() {
