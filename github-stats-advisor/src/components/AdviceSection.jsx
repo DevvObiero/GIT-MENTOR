@@ -25,7 +25,7 @@ const AdviceSection = ({ username, stats }) => {
      const response = await axios.post('https://git-mentor-ku99.onrender.com/api/analyze', { username, stats });
       setRankInfo(response.data);
     } catch (err) {
-      setError('Failed to generate advice.');
+      setError('Server Busy click again.');
       console.error('Advice generation error:', err);
     } finally {
       setLoading(false);
