@@ -213,7 +213,7 @@ Current rank: ${level} (top ${percentile}%).
 To reach ${nextLevel} (top ${nextThreshold}%), you need ~${Math.round(neededPoints)} more points.
 
 Give 3 actionable tips to improve my GitHub profile. Make sure to mention all the current stats including pull request reviews and contributed to repositories metrics.`;
-
+// u love uji 
   try {
     console.log('🤖 Calling OpenRouter API...');
     const aiRes = await axios.post(OPENROUTER_URL, {
