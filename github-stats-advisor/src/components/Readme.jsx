@@ -92,7 +92,7 @@ export default function Readme() {
 
 <div className="flex justify-center mb-6">
   <img
-    src="./src/streak.png"
+    src="./streak.png"
     alt="GitHub Contribution Graph Example"
     className="rounded-lg border shadow-md max-w-full sm:max-w-md"
   />
